@@ -3,10 +3,7 @@ require "sinatra/reloader"
 
 #Home page
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:square_new)
 end
 
 #Square-new
@@ -16,31 +13,39 @@ get("/square/new") do
 end
 
 get("/square/results") do
-  number=params.fetch("square_number").to_f
-  squared_num = number ** 2
-  pp number
-  pp squared_num
+  @number = params.fetch("square").to_f
+  @squared = @number ** 2
+ erb(:square_results)
 end
 
-
-#Square-root-new
+#Square-root
 get("/square_root/new") do
-
-
-
+  erb(:sqrt_new)
 end
 
-#payment-new
+get("/square_root/results") do
+  @number = params.fetch("sqrt").to_f
+  @sqrted = @number ** 0.5
+  erb(:sqrt_res)
+end
+
+#payment
 get("/payment/new") do
+  erb(:payment_new)
+end
 
-
-
+get("/payment/results") do
+  @rate = params.fetch("apr_value").to_f
+  @n = params.fetch("").to_f
+  @pv = params.fetch("principal_value").to_f
+  @payment = ((@rate/100)* @pv) / (1-((1+ @rate)**(-@n)))
+  erb(:payment_results)
 end
 
 #random-new
 get("/random/new") do
 
-
 end
 
+get()
 #results
