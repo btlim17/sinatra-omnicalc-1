@@ -36,7 +36,7 @@ end
 
 get("/payment/results") do
   @rate = params.fetch("apr_value").to_f
-  @n = params.fetch("").to_f
+  @n = params.fetch("num_years").to_f
   @pv = params.fetch("principal_value").to_f
   @payment = ((@rate/100)* @pv) / (1-((1+ @rate)**(-@n)))
   erb(:payment_results)

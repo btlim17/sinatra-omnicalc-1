@@ -3,13 +3,13 @@
 <body>
 <dl>
   <dt>APR</dt>
-  <dd><%= @rate.to_fs(:percentage)%></dd>
+  <dd><%=@rate.to_fs(:percentage)%></dd>
   <dt>Number of years</dt>
-  <dd><%= @n %></dd>
+  <dd><%=@n%></dd>
   <dt>Principal</dt>
-  <dd><%= @pv.to_fs(:currency) %></dd>
+  <dd><%=@pv.to_fs(:currency)%></dd>
   <dt>Payment</dt>
-  <dd><%= @payment.to_fs(:currency) %></dd>
+  <dd><%=@payment.to_fs(:currency)%></dd>
 </dl>
 <div><a href = "/payment/new">Calculate another payment</a></div>
 </body>
