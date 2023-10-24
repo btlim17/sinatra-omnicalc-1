@@ -47,5 +47,4 @@ get("/random/new") do
 
 end
 
-get()
-#results
+
